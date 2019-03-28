@@ -226,19 +226,18 @@ public class SeveralDFAs{
      *
      * @param Q is the set of DFAs taken the cross product of
      * @param s current string (set of deltas to get to the current position)
-     * @param depth the current length of the string (or how many deltas have been selected along the current path)
-     * @param depthMax the length of the path before it the string should end (this should be the length of the shortest possible string such that Sigma* of this length traverses all possible states). This information is a Grand Truth of the problem
      * @param states the growing set of states for the Cross Product
      * @param alphabet the alphabet of the cross product
      * @param finals the valid states of the cross product
      * @param delta the set of deltas of the cross product
      * @param prevState the previous state that was traversed (this is used to prevent redundancies in looping states).
+     * @param curPath a HashSet of all Nodes along a given path
      * @return The set of all states, although this could have been void since Sets are update by reference and not by value
      */
-    public static Set<String> allPossStrings(Set<DFA> Q, String s, int depth, int depthMax, Set<String> states,
-                                              Set<Character> alphabet, Set<String> finals, HashMap<Tuple, String> delta,
-                                              String prevState){
-        if (depth>=depthMax) return states;
+    public static void allPossStrings(Set<DFA> Q, String s, Set<String> states,
+                                      Set<Character> alphabet, Set<String> finals, HashMap<Tuple, String> delta,
+                                      String prevState, HashSet<Web.Node> curPath){
+        if(curPath.contains(prevState)) return;
         //evaluate current
         //System.out.println("inputString: " + s);
         StringBuilder b = new StringBuilder();
@@ -263,8 +262,12 @@ public class SeveralDFAs{
         if(!badIn) states.add(curState); ///if a state is null, then dont follow through
         //parse through states for each DFA
         //System.out.println("Finals(s): " + finals);
-        alphabet.forEach((a) -> allPossStrings(Q, s+a, depth+1,depthMax,states,alphabet,finals,delta, curState));
-        return states;
+        alphabet.forEach((a) -> {
+            HashSet<Web.Node> path = new HashSet<Web.Node>();
+            path = (HashSet<Web.Node>) curPath.clone();
+            allPossStrings(Q, s + a, states, alphabet, finals, delta, curState, path);
+        });
+        return;
     }
 
     /**
@@ -292,7 +295,7 @@ public class SeveralDFAs{
 
         /* Set up the states & finals*/
         int stringLength = 8; //longest string necessary to acquire all possible states
-        states = allPossStrings(Q, "", 0, stringLength,states,alphabet, finals, delta, start1);
+        allPossStrings(Q, "", states,alphabet, finals, delta, start1, new HashSet<Web.Node>());
         states = states.stream().distinct().collect(Collectors.toSet()); //remove duplicates of states
         //System.out.println("Finals: " + finals);
         return new DFA(states, alphabet, delta, start1, finals);
