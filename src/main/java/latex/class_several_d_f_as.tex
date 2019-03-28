@@ -1,0 +1,94 @@
+\hypertarget{class_several_d_f_as}{}\section{Several\+D\+F\+As Class Reference}
+\label{class_several_d_f_as}\index{SeveralDFAs@{SeveralDFAs}}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_several_d_f_as_a47419a6422944b096d57eace2bd681fb}\label{class_several_d_f_as_a47419a6422944b096d57eace2bd681fb}} 
+static \mbox{\hyperlink{class_d_f_a}{D\+FA}} {\bfseries evenA} ()
+\item 
+\mbox{\Hypertarget{class_several_d_f_as_acd8b269da1afd756e62bdd9b0c22f3f1}\label{class_several_d_f_as_acd8b269da1afd756e62bdd9b0c22f3f1}} 
+static \mbox{\hyperlink{class_d_f_a}{D\+FA}} {\bfseries tripleA} ()
+\item 
+\mbox{\Hypertarget{class_several_d_f_as_a8801e47e5711f3e1b94b0541e1d4b27e}\label{class_several_d_f_as_a8801e47e5711f3e1b94b0541e1d4b27e}} 
+static \mbox{\hyperlink{class_d_f_a}{D\+FA}} {\bfseries triple\+And\+EvenA} ()
+\item 
+\mbox{\Hypertarget{class_several_d_f_as_a97c2a4b571d625eec7f1dd9ee3f6fd7e}\label{class_several_d_f_as_a97c2a4b571d625eec7f1dd9ee3f6fd7e}} 
+static \mbox{\hyperlink{class_d_f_a}{D\+FA}} {\bfseries comp\+Id} ()
+\item 
+static Set$<$ String $>$ \mbox{\hyperlink{class_several_d_f_as_a43b88bc47b42d281c9169bf7b1377f6a}{all\+Poss\+Strings}} (Set$<$ \mbox{\hyperlink{class_d_f_a}{D\+FA}} $>$ Q, String s, int depth, int depth\+Max, Set$<$ String $>$ states, Set$<$ Character $>$ alphabet, Set$<$ String $>$ finals, Hash\+Map$<$ \mbox{\hyperlink{class_tuple}{Tuple}}, String $>$ delta, String prev\+State)
+\item 
+static \mbox{\hyperlink{class_d_f_a}{D\+FA}} \mbox{\hyperlink{class_several_d_f_as_a63696c729a39776ec96a15c0cf711ede}{cross\+Product}} (Set$<$ \mbox{\hyperlink{class_d_f_a}{D\+FA}} $>$ Q)
+\item 
+\mbox{\Hypertarget{class_several_d_f_as_aa1c5efae655ccc4cd9e5239503b3b17d}\label{class_several_d_f_as_aa1c5efae655ccc4cd9e5239503b3b17d}} 
+static \mbox{\hyperlink{class_d_f_a}{D\+FA}} {\bfseries password} ()
+\item 
+\mbox{\Hypertarget{class_several_d_f_as_aa144dba9cb2576cd0819681020ae4bc0}\label{class_several_d_f_as_aa144dba9cb2576cd0819681020ae4bc0}} 
+static int {\bfseries position\+Of} (char\mbox{[}$\,$\mbox{]} chars, char c)
+\item 
+\mbox{\Hypertarget{class_several_d_f_as_a22202d89b114e7731c17f510abc18cc6}\label{class_several_d_f_as_a22202d89b114e7731c17f510abc18cc6}} 
+static Array\+List$<$ Character $>$ {\bfseries list\+Clone} (Array\+List$<$ Character $>$ chars)
+\item 
+\mbox{\Hypertarget{class_several_d_f_as_a85acb079d15300d1a001ed48ca8d666a}\label{class_several_d_f_as_a85acb079d15300d1a001ed48ca8d666a}} 
+static \mbox{\hyperlink{class_d_f_a}{D\+FA}} {\bfseries hamming\+Distance} (String match, int distance)
+\item 
+\mbox{\Hypertarget{class_several_d_f_as_a2a1e5f53d65b24817e1865c2961c75ad}\label{class_several_d_f_as_a2a1e5f53d65b24817e1865c2961c75ad}} 
+static void {\bfseries main} (String\mbox{[}$\,$\mbox{]} args)
+\end{DoxyCompactItemize}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_several_d_f_as_a43b88bc47b42d281c9169bf7b1377f6a}\label{class_several_d_f_as_a43b88bc47b42d281c9169bf7b1377f6a}} 
+\index{SeveralDFAs@{SeveralDFAs}!allPossStrings@{allPossStrings}}
+\index{allPossStrings@{allPossStrings}!SeveralDFAs@{SeveralDFAs}}
+\subsubsection{\texorpdfstring{allPossStrings()}{allPossStrings()}}
+{\footnotesize\ttfamily static Set$<$String$>$ Several\+D\+F\+As.\+all\+Poss\+Strings (\begin{DoxyParamCaption}\item[{Set$<$ \mbox{\hyperlink{class_d_f_a}{D\+FA}} $>$}]{Q,  }\item[{String}]{s,  }\item[{int}]{depth,  }\item[{int}]{depth\+Max,  }\item[{Set$<$ String $>$}]{states,  }\item[{Set$<$ Character $>$}]{alphabet,  }\item[{Set$<$ String $>$}]{finals,  }\item[{Hash\+Map$<$ \mbox{\hyperlink{class_tuple}{Tuple}}, String $>$}]{delta,  }\item[{String}]{prev\+State }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+This is the main mechanism for implementing the cross product of multiple D\+F\+As. The general structure of this is to physically traverse each \mbox{\hyperlink{class_d_f_a}{D\+FA}} and create states based off of where each \mbox{\hyperlink{class_d_f_a}{D\+FA}} is simultaneously. To make this easier, the \mbox{\hyperlink{class_d_f_a}{D\+FA}}\textquotesingle{}s default operation for a character that is not within its alphabet, then the state loops back to itself. This will be the case because the character (in most cases) will have a static effect on the \mbox{\hyperlink{class_d_f_a}{D\+FA}}. This will have to be adjusted on a case by case basis, or each \mbox{\hyperlink{class_d_f_a}{D\+FA}} will have to have a standardized library before being ran through this method. This method passes through each possible path within Sigma$\ast$ and optimizes to prevent redundancy by ending the recursion on states that loop back into itself. A better optimization would be to check for the new delta or state in the Hash\+Set/\+Hash\+Map (since the Find method is Theta(1)). There is also a piece of outside information that I have not been able to derive just from the D\+F\+As, the length of longest string in the Sigma$\ast$ language that traverses through all possible states. For the password \mbox{\hyperlink{class_d_f_a}{D\+FA}}, the longest string will be 8 characters long. If we were to use the redundancy check described above, then this depth parameter would not even be needed since the Path will end on any sort of redundancy, making the method incredibly efficient. This implementation also assumes for the Intersection of D\+F\+As since a Final state will only be added if the path in each \mbox{\hyperlink{class_d_f_a}{D\+FA}} is Final. This can be adjusted to be more flexible to different types of desired valid states such as Union.
+
+
+\begin{DoxyParams}{Parameters}
+{\em Q} & is the set of D\+F\+As taken the cross product of \\
+\hline
+{\em s} & current string (set of deltas to get to the current position) \\
+\hline
+{\em depth} & the current length of the string (or how many deltas have been selected along the current path) \\
+\hline
+{\em depth\+Max} & the length of the path before it the string should end (this should be the length of the shortest possible string such that Sigma$\ast$ of this length traverses all possible states). This information is a Grand Truth of the problem \\
+\hline
+{\em states} & the growing set of states for the Cross Product \\
+\hline
+{\em alphabet} & the alphabet of the cross product \\
+\hline
+{\em finals} & the valid states of the cross product \\
+\hline
+{\em delta} & the set of deltas of the cross product \\
+\hline
+{\em prev\+State} & the previous state that was traversed (this is used to prevent redundancies in looping states). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The set of all states, although this could have been void since Sets are update by reference and not by value 
+\end{DoxyReturn}
+check if state could be final
+
+add to finals if final
+
+if a state is null, then dont follow through \mbox{\Hypertarget{class_several_d_f_as_a63696c729a39776ec96a15c0cf711ede}\label{class_several_d_f_as_a63696c729a39776ec96a15c0cf711ede}} 
+\index{SeveralDFAs@{SeveralDFAs}!crossProduct@{crossProduct}}
+\index{crossProduct@{crossProduct}!SeveralDFAs@{SeveralDFAs}}
+\subsubsection{\texorpdfstring{crossProduct()}{crossProduct()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{class_d_f_a}{D\+FA}} Several\+D\+F\+As.\+cross\+Product (\begin{DoxyParamCaption}\item[{Set$<$ \mbox{\hyperlink{class_d_f_a}{D\+FA}} $>$}]{Q }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+This is the helper method to build the cross product of a set of D\+F\+As 
+\begin{DoxyParams}{Parameters}
+{\em Q} & the Set of D\+F\+As \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the \mbox{\hyperlink{class_d_f_a}{D\+FA}} of the cross product of Q 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Several\+D\+F\+As.\+java\end{DoxyCompactItemize}

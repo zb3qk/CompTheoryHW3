@@ -1,0 +1,112 @@
+\hypertarget{class_d_f_a}{}\section{D\+FA Class Reference}
+\label{class_d_f_a}\index{DFA@{DFA}}
+Inheritance diagram for D\+FA\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_d_f_a}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_d_f_a_a2dac22724db342b9f981318325f99f0e}{D\+FA}} (Set$<$ String $>$ states, Set$<$ Character $>$ alphabet, Map$<$ \mbox{\hyperlink{class_tuple}{Tuple}}, String $>$ delta, String start, Set$<$ String $>$ finals)
+\item 
+String \mbox{\hyperlink{class_d_f_a_a77e6a5e4aa6f18671a8e4534735ede72}{get\+State}} (String deltas)
+\item 
+String \mbox{\hyperlink{class_d_f_a_a3ed33d3f6ca27d723d8357c0aa44b362}{get\+State}} (String deltas, Web.\+Node$<$ String $>$ n)
+\item 
+\mbox{\Hypertarget{class_d_f_a_ad565130d28a1ed9ddfbd4e3df6791e8a}\label{class_d_f_a_ad565130d28a1ed9ddfbd4e3df6791e8a}} 
+boolean {\bfseries is\+Final} (String state)
+\item 
+\mbox{\Hypertarget{class_d_f_a_a676dcfeea9da5d2db9334d92de04854d}\label{class_d_f_a_a676dcfeea9da5d2db9334d92de04854d}} 
+boolean {\bfseries step} (char c)
+\item 
+\mbox{\Hypertarget{class_d_f_a_af214bd9d0f7b409f51d9c75231a35d8a}\label{class_d_f_a_af214bd9d0f7b409f51d9c75231a35d8a}} 
+boolean {\bfseries reset} ()
+\item 
+\mbox{\Hypertarget{class_d_f_a_a31a84e701857a6481cfe6d7d732b44c4}\label{class_d_f_a_a31a84e701857a6481cfe6d7d732b44c4}} 
+void {\bfseries to\+Dot} ()
+\item 
+int \mbox{\hyperlink{class_d_f_a_abdddbd2717851483dfe7524f58a9487d}{lang\+Path}} (Hash\+Set$<$ Web.\+Node $>$ node\+Path, Web.\+Node cur\+Node, boolean prev\+Igaul\+Next, Hash\+Set$<$ Double $>$ counts)
+\item 
+\mbox{\Hypertarget{class_d_f_a_a1bc60801cdf2ce0036c06f236edb74a0}\label{class_d_f_a_a1bc60801cdf2ce0036c06f236edb74a0}} 
+int {\bfseries lang\+Size} ()
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_d_f_a_a0a0a65bb0d4d4c7ee3af3865cfaac445}\label{class_d_f_a_a0a0a65bb0d4d4c7ee3af3865cfaac445}} 
+String {\bfseries active}
+\item 
+\mbox{\Hypertarget{class_d_f_a_a7c8e7a553ba9c7e2da5df854acaadace}\label{class_d_f_a_a7c8e7a553ba9c7e2da5df854acaadace}} 
+\mbox{\hyperlink{class_web}{Web}} {\bfseries web}
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_d_f_a_a2dac22724db342b9f981318325f99f0e}\label{class_d_f_a_a2dac22724db342b9f981318325f99f0e}} 
+\index{DFA@{DFA}!DFA@{DFA}}
+\index{DFA@{DFA}!DFA@{DFA}}
+\subsubsection{\texorpdfstring{DFA()}{DFA()}}
+{\footnotesize\ttfamily D\+F\+A.\+D\+FA (\begin{DoxyParamCaption}\item[{Set$<$ String $>$}]{states,  }\item[{Set$<$ Character $>$}]{alphabet,  }\item[{Map$<$ \mbox{\hyperlink{class_tuple}{Tuple}}, String $>$}]{delta,  }\item[{String}]{start,  }\item[{Set$<$ String $>$}]{finals }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+This is used to convert the provided \mbox{\hyperlink{class_d_f_a}{D\+FA}} into the \mbox{\hyperlink{class_web}{Web}} format
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_d_f_a_a77e6a5e4aa6f18671a8e4534735ede72}\label{class_d_f_a_a77e6a5e4aa6f18671a8e4534735ede72}} 
+\index{DFA@{DFA}!getState@{getState}}
+\index{getState@{getState}!DFA@{DFA}}
+\subsubsection{\texorpdfstring{getState()}{getState()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily String D\+F\+A.\+get\+State (\begin{DoxyParamCaption}\item[{String}]{deltas }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Makes use of the \mbox{\hyperlink{class_web}{Web}} datatype to traverse through the \mbox{\hyperlink{class_d_f_a}{D\+FA}} 
+\begin{DoxyParams}{Parameters}
+{\em deltas} & an array of characters (deltas) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+String of the return state 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_d_f_a_a3ed33d3f6ca27d723d8357c0aa44b362}\label{class_d_f_a_a3ed33d3f6ca27d723d8357c0aa44b362}} 
+\index{DFA@{DFA}!getState@{getState}}
+\index{getState@{getState}!DFA@{DFA}}
+\subsubsection{\texorpdfstring{getState()}{getState()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily String D\+F\+A.\+get\+State (\begin{DoxyParamCaption}\item[{String}]{deltas,  }\item[{Web.\+Node$<$ String $>$}]{n }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+This process is meant to imagined as literally following instructions along a road. The Node indicates the location and the delta indicates where to go. This is made possible via the \mbox{\hyperlink{class_web}{Web}} data structure. 
+\begin{DoxyParams}{Parameters}
+{\em deltas} & a string of Characters from an alphabet as the decider input \\
+\hline
+{\em n} & This is the current node that the path is on \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+returns the final node in the path once all the deltas have been used up 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_d_f_a_abdddbd2717851483dfe7524f58a9487d}\label{class_d_f_a_abdddbd2717851483dfe7524f58a9487d}} 
+\index{DFA@{DFA}!langPath@{langPath}}
+\index{langPath@{langPath}!DFA@{DFA}}
+\subsubsection{\texorpdfstring{langPath()}{langPath()}}
+{\footnotesize\ttfamily int D\+F\+A.\+lang\+Path (\begin{DoxyParamCaption}\item[{Hash\+Set$<$ Web.\+Node $>$}]{node\+Path,  }\item[{Web.\+Node}]{cur\+Node,  }\item[{boolean}]{prev\+Igaul\+Next,  }\item[{Hash\+Set$<$ Double $>$}]{counts }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+This function operates under the assumption that nodes that cycle to itself is not considered within the given definition of a cycle
+
+
+\begin{DoxyParams}{Parameters}
+{\em node\+Path} & A Hash\+Set of nodes which have already been traversed \\
+\hline
+{\em cur\+Node} & The node that the method will currently process \\
+\hline
+{\em prev\+Igaul\+Next} & Check if the next node is the same as the current Node to stop counting This is done so that a false positive for a cycle is not reached \\
+\hline
+{\em counts} & A very stupid way to do this, but makes \textquotesingle{}n\textquotesingle{} positions in a Hash\+Set and the total number of elements of determined by the length of this Set becuase the variables inside of a .for\+Each loop must be final or effectively final \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+returns the size of the counts Hash\+Set. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+D\+F\+A.\+java\end{DoxyCompactItemize}

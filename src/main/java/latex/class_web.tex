@@ -1,0 +1,144 @@
+\hypertarget{class_web}{}\section{Web$<$ T $>$ Class Template Reference}
+\label{class_web}\index{Web$<$ T $>$@{Web$<$ T $>$}}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class {\bfseries delta}
+\item 
+class {\bfseries Node}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+String \mbox{\hyperlink{class_web_afa2f7442238f2fc0aaa39861398d0240}{to\+String}} (Node$<$ String $>$ n)
+\item 
+String \mbox{\hyperlink{class_web_adedf3de84f0f3c9350af5b54219b69ee}{to\+String}} (delta$<$ Character $>$ d)
+\item 
+\mbox{\Hypertarget{class_web_ab83bbd9a954c513025582e0162a3c3c2}\label{class_web_ab83bbd9a954c513025582e0162a3c3c2}} 
+String {\bfseries to\+String} ()
+\item 
+\mbox{\Hypertarget{class_web_a94907f5efb2b56501d03d491a3b4ad8b}\label{class_web_a94907f5efb2b56501d03d491a3b4ad8b}} 
+String {\bfseries get\+Node\+Data} (Node$<$ String $>$ node)
+\item 
+\mbox{\Hypertarget{class_web_ac4e61d8f80be4c96c7bc4760a2e6ad0b}\label{class_web_ac4e61d8f80be4c96c7bc4760a2e6ad0b}} 
+Character {\bfseries get\+Delta\+Data} (delta$<$ Character $>$ d)
+\item 
+Node$<$ String $>$ \mbox{\hyperlink{class_web_a50049ebc833e785dde56385a94790f2f}{find\+Node}} (String name)
+\item 
+Node$<$ String $>$ \mbox{\hyperlink{class_web_a5d7f78dc2b709da693a67e168a880411}{create\+Node}} (String name)
+\item 
+void \mbox{\hyperlink{class_web_a5bccfa9eddb9815feccc8d0bd8cdb083}{add\+Delta}} (Node$<$ String $>$ start, Character d, Node$<$ String $>$ end)
+\item 
+Node$<$ String $>$ \mbox{\hyperlink{class_web_a98350d3dc6cc4db4aa769972a56beb8f}{next\+Node}} (Node$<$ String $>$ start, Character d)
+\item 
+\mbox{\Hypertarget{class_web_a9baab6b4e28c4eacb16bd54c54140589}\label{class_web_a9baab6b4e28c4eacb16bd54c54140589}} 
+Set$<$ Web.\+delta $>$ {\bfseries get\+Deltas} (Node$<$ String $>$ n)
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_web_a90a7dd4e17ae18066eb78ab2eae143f8}\label{class_web_a90a7dd4e17ae18066eb78ab2eae143f8}} 
+static void {\bfseries main} (String\mbox{[}$\,$\mbox{]} args)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The \mbox{\hyperlink{class_web}{Web}} Data structure is a generalizable system defined by Nodes and deltas. The way the \mbox{\hyperlink{class_web}{Web}} is set up, the Node can represent location and the delta represents a change in location. This is implemented by references, where Nodes reference to a series of deltas, and deltas reference to other nodes. Deltas can also be associated with the directed edges in a connection. There are various methods in this class to help traverse this \mbox{\hyperlink{class_web}{Web}} via String inputs.
+
+In retrospect, it probably would have been smarter to make a different class for Node and delta so that these individual data types can be manipulated via methods of their own instead of adapting \mbox{\hyperlink{class_web}{Web}} for this purpose. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_web_a5bccfa9eddb9815feccc8d0bd8cdb083}\label{class_web_a5bccfa9eddb9815feccc8d0bd8cdb083}} 
+\index{Web$<$ T $>$@{Web$<$ T $>$}!addDelta@{addDelta}}
+\index{addDelta@{addDelta}!Web$<$ T $>$@{Web$<$ T $>$}}
+\subsubsection{\texorpdfstring{addDelta()}{addDelta()}}
+{\footnotesize\ttfamily void \mbox{\hyperlink{class_web}{Web}}$<$ T $>$.add\+Delta (\begin{DoxyParamCaption}\item[{Node$<$ String $>$}]{start,  }\item[{Character}]{d,  }\item[{Node$<$ String $>$}]{end }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+This is meant to complement the create\+Node method to add deltas to the new Node 
+\begin{DoxyParams}{Parameters}
+{\em start} & the source Node \\
+\hline
+{\em d} & the delta.\+data \\
+\hline
+{\em end} & the destination node \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_web_a5d7f78dc2b709da693a67e168a880411}\label{class_web_a5d7f78dc2b709da693a67e168a880411}} 
+\index{Web$<$ T $>$@{Web$<$ T $>$}!createNode@{createNode}}
+\index{createNode@{createNode}!Web$<$ T $>$@{Web$<$ T $>$}}
+\subsubsection{\texorpdfstring{createNode()}{createNode()}}
+{\footnotesize\ttfamily Node$<$String$>$ \mbox{\hyperlink{class_web}{Web}}$<$ T $>$.create\+Node (\begin{DoxyParamCaption}\item[{String}]{name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+This is designed to initialize a Node 
+\begin{DoxyParams}{Parameters}
+{\em name} & represents the data in the Node \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the initialized Node Data Type 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_web_a50049ebc833e785dde56385a94790f2f}\label{class_web_a50049ebc833e785dde56385a94790f2f}} 
+\index{Web$<$ T $>$@{Web$<$ T $>$}!findNode@{findNode}}
+\index{findNode@{findNode}!Web$<$ T $>$@{Web$<$ T $>$}}
+\subsubsection{\texorpdfstring{findNode()}{findNode()}}
+{\footnotesize\ttfamily Node$<$String$>$ \mbox{\hyperlink{class_web}{Web}}$<$ T $>$.find\+Node (\begin{DoxyParamCaption}\item[{String}]{name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+A Node may be needed to be used via a given state name, and this method enables this behavior. This is run in O(n) runtime. In reality, if the list of all Nodes were put in a Hash\+Table sorted by Node.\+data, then this could be executed in Theta(1) runtime. 
+\begin{DoxyParams}{Parameters}
+{\em name} & The \textquotesingle{}data\textquotesingle{} parameter of the Node \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the Node that is associated with the \textquotesingle{}data\textquotesingle{} parameter 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_web_a98350d3dc6cc4db4aa769972a56beb8f}\label{class_web_a98350d3dc6cc4db4aa769972a56beb8f}} 
+\index{Web$<$ T $>$@{Web$<$ T $>$}!nextNode@{nextNode}}
+\index{nextNode@{nextNode}!Web$<$ T $>$@{Web$<$ T $>$}}
+\subsubsection{\texorpdfstring{nextNode()}{nextNode()}}
+{\footnotesize\ttfamily Node$<$String$>$ \mbox{\hyperlink{class_web}{Web}}$<$ T $>$.next\+Node (\begin{DoxyParamCaption}\item[{Node$<$ String $>$}]{start,  }\item[{Character}]{d }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+This method is our traversal mechanism, taking advantage of a Node\textquotesingle{}s reference to a delta, and the delta\textquotesingle{}s reference to the next Node.
+
+If the delta does not exist within the node, then the same node is returned. This choice was made to support the cross product mechanism. If an unknown character were passed through the \mbox{\hyperlink{class_d_f_a}{D\+FA}}, then it would break the system, and thusly when conducting a Cross Product (within the scope of the problems given in this assignment), this choice would not break the system. (This logic would break in an N\+DA system) 
+\begin{DoxyParams}{Parameters}
+{\em start} & Node type of the start node \\
+\hline
+{\em d} & character for the delta \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the ending node 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_web_afa2f7442238f2fc0aaa39861398d0240}\label{class_web_afa2f7442238f2fc0aaa39861398d0240}} 
+\index{Web$<$ T $>$@{Web$<$ T $>$}!toString@{toString}}
+\index{toString@{toString}!Web$<$ T $>$@{Web$<$ T $>$}}
+\subsubsection{\texorpdfstring{toString()}{toString()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily String \mbox{\hyperlink{class_web}{Web}}$<$ T $>$.to\+String (\begin{DoxyParamCaption}\item[{Node$<$ String $>$}]{n }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em n} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the Node\textquotesingle{}s information in a readable String format 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_web_adedf3de84f0f3c9350af5b54219b69ee}\label{class_web_adedf3de84f0f3c9350af5b54219b69ee}} 
+\index{Web$<$ T $>$@{Web$<$ T $>$}!toString@{toString}}
+\index{toString@{toString}!Web$<$ T $>$@{Web$<$ T $>$}}
+\subsubsection{\texorpdfstring{toString()}{toString()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily String \mbox{\hyperlink{class_web}{Web}}$<$ T $>$.to\+String (\begin{DoxyParamCaption}\item[{delta$<$ Character $>$}]{d }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em d} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the delta\textquotesingle{}s information in a readable String format 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Web.\+java\end{DoxyCompactItemize}

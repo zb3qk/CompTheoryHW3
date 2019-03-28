@@ -1,0 +1,69 @@
+\hypertarget{class_f_s_a}{}\section{F\+SA Class Reference}
+\label{class_f_s_a}\index{FSA@{FSA}}
+Inheritance diagram for F\+SA\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_f_s_a}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+boolean \mbox{\hyperlink{class_f_s_a_ae397e97abea4e09b0f8487d7caf70104}{decide}} (String s)
+\item 
+\mbox{\Hypertarget{class_f_s_a_ac77519ed0a14cfa586daa7756fc24168}\label{class_f_s_a_ac77519ed0a14cfa586daa7756fc24168}} 
+abstract String {\bfseries get\+State} (String deltas)
+\item 
+\mbox{\Hypertarget{class_f_s_a_a5ab70d6bc8ab3c9b9b161e4fe856bba0}\label{class_f_s_a_a5ab70d6bc8ab3c9b9b161e4fe856bba0}} 
+abstract boolean {\bfseries step} (char c)
+\item 
+\mbox{\Hypertarget{class_f_s_a_a66aa769a90ca1e2b7eac3c3653d0c396}\label{class_f_s_a_a66aa769a90ca1e2b7eac3c3653d0c396}} 
+abstract boolean {\bfseries reset} ()
+\item 
+\mbox{\Hypertarget{class_f_s_a_af073959a7cc6e9f938008d02e9e5cbbe}\label{class_f_s_a_af073959a7cc6e9f938008d02e9e5cbbe}} 
+abstract void {\bfseries to\+Dot} ()
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_f_s_a_a9f7442588d7f5ed33072a7bc258324bb}\label{class_f_s_a_a9f7442588d7f5ed33072a7bc258324bb}} 
+Set$<$ String $>$ {\bfseries states}
+\item 
+\mbox{\Hypertarget{class_f_s_a_ae1306963959ee001cdde22639135d183}\label{class_f_s_a_ae1306963959ee001cdde22639135d183}} 
+Map$<$ \mbox{\hyperlink{class_tuple}{Tuple}}, String $>$ {\bfseries delta}
+\item 
+\mbox{\Hypertarget{class_f_s_a_a1ba72f24e383d1a0e4677d9d5e73e3eb}\label{class_f_s_a_a1ba72f24e383d1a0e4677d9d5e73e3eb}} 
+String {\bfseries start}
+\item 
+\mbox{\Hypertarget{class_f_s_a_ab837225e277ed440c8c44c47dd484b78}\label{class_f_s_a_ab837225e277ed440c8c44c47dd484b78}} 
+Set$<$ String $>$ {\bfseries finals}
+\item 
+\mbox{\Hypertarget{class_f_s_a_a2cf220c836a7d1d9a922378fccf7db57}\label{class_f_s_a_a2cf220c836a7d1d9a922378fccf7db57}} 
+Set$<$ Character $>$ {\bfseries alphabet}
+\end{DoxyCompactItemize}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_f_s_a_ae397e97abea4e09b0f8487d7caf70104}\label{class_f_s_a_ae397e97abea4e09b0f8487d7caf70104}} 
+\index{FSA@{FSA}!decide@{decide}}
+\index{decide@{decide}!FSA@{FSA}}
+\subsubsection{\texorpdfstring{decide()}{decide()}}
+{\footnotesize\ttfamily boolean F\+S\+A.\+decide (\begin{DoxyParamCaption}\item[{String}]{s }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+The decide mechanism was also changed to support the \mbox{\hyperlink{class_web}{Web}} data structure, and take advantage of the references between different nodes. If String s has bad inputs, get\+State has its own logic structure take rectifies it for use with the Cross Product. IF B\+AD D\+E\+L\+T\+AS A\+RE A P\+O\+S\+S\+I\+B\+I\+L\+I\+TY, R\+E\+C\+T\+I\+FY F\+OR IT O\+U\+T\+S\+I\+DE OF T\+H\+IS M\+E\+T\+H\+OD. 
+\begin{DoxyParams}{Parameters}
+{\em s} & a string of deltas (Characters) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true or false depending on whether or not the ending state is final 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{interface_decider}{Decider}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+F\+S\+A.\+java\end{DoxyCompactItemize}
