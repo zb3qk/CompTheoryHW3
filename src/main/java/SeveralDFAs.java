@@ -213,8 +213,9 @@ public class SeveralDFAs{
      * to itself. This will be the case because the character (in most cases) will have a static effect on the DFA.
      * This will  have to be adjusted on a case by case basis, or each DFA will have to have a standardized library
      * before being ran through this method. This method passes through each possible path within Sigma* and optimizes
-     * to prevent redundancy by ending the recursion on states that loop back into itself. A better optimization would
-     * be to check for the new delta or state in the HashSet/HashMap (since the Find method is Theta(1)). There is also
+     * to prevent redundancy by ending the recursion on states that loop back into itself.
+     *
+     * A better optimization would be to check for the new delta or state in the HashSet/HashMap (since the Find method is Theta(1)). There is also
      * a piece of outside information that I have not been able to derive just from the DFAs, the length of longest
      * string in the Sigma* language that traverses through all possible states. For the password DFA, the longest string
      * will be 8 characters long. If we were to use the redundancy check described above, then this depth parameter
